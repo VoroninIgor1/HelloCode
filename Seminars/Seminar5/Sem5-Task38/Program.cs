@@ -12,7 +12,6 @@ int[] MakeArr(int len)
 
 int DifMaxMin(int[] array)
 {
-    int dif = 0;
     int max = array[0];
     int min = array[0];
     for (int i = 1; i < array.Length; i++)
@@ -20,8 +19,7 @@ int DifMaxMin(int[] array)
             if (array[i]<min) min = array[i]; 
             if (array[i]>max) max = array[i]; 
         }
-    dif = max - min;    
-    return dif;
+    return (max - min);
 }
 
 Console.WriteLine("введите длину массива");
