@@ -36,39 +36,34 @@ int[,] FillArray2m(int[,] array)
 
         for (int n = 1; (n <= countN)&&(s <= num); n++)
         {
-            int y1;
             x = n - 1;
             //направо            
-            for (y1 = y; (y1 <= (array.GetLength(1) - n))&&(s < num); y1++)
+            for (y = y; (y <= (array.GetLength(1) - n))&&(s < num); y++)
             {
-                arr[x, y1] = s + 1;
-                s = arr[x, y1];
+                arr[x, y] = s + 1;
+                s = arr[x, y];
             }
-            y = y1 - 1;
+            y = y - 1;
             x = x + 1;
-            int x1;
             //вниз
-            for (x1 = x; (x1 <= (array.GetLength(0) - 1 - n))&&(s < num); x1++)
+            for (x = x; (x <= (array.GetLength(0) - 1 - n))&&(s < num); x++)
             {
-                arr[x1, y] = s + 1;
-                s = arr[x1, y];
+                arr[x, y] = s + 1;
+                s = arr[x, y];
             }
-            x = x1;
-            int y2;
             //налево
-            for (y2 = y; (y2 >= (n - 1))&&(s < num); y2--)
+            for (y = y; (y >= (n - 1))&&(s < num); y--)
             {
-                arr[x, y2] = s + 1;
-                s = arr[x, y2];
+                arr[x, y] = s + 1;
+                s = arr[x, y];
             }
-            y = y2 + 1;
+            y = y + 1;
             x = x - 1;
-            int x2;
             //вверх
-            for (x2 = x; (x2 >= n)&&(s < num); x2--)
+            for (x = x; (x >= n)&&(s < num); x--)
             {
-                arr[x2, y] = s + 1;
-                s = arr[x2, y];
+                arr[x, y] = s + 1;
+                s = arr[x, y];
             }
             y = y + 1;
         }
