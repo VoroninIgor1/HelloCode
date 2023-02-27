@@ -7,14 +7,8 @@ Console.WriteLine("Введите массив строк.");
 Console.Write("Задайте число строк (элементов) массива: n = ");
 int k1 = Convert.ToInt32(Console.ReadLine());
 string[] arr1 = new string[k1];
-Console.WriteLine("Введите " + k1 + " элементов массива через пробел:");
+Console.WriteLine("Введите " + k1 + " строк массива через пробел:");
 arr1 = Console.ReadLine().Split(' ');
-
-Console.WriteLine();
-Console.WriteLine("Исходный массив:");
-for (int i = 0; i < k1; i++)
-    Console.Write(arr1[i] + "; ");
-    Console.WriteLine("\b\b.");
 
 int k2 = 0; //длинна результирующего массива
 for (int i = 0; i < k1; i++)
