@@ -6,19 +6,20 @@ Console.WriteLine("Введите массив строк.");
 Console.Write("Задайте число строк (элементов) массива: n = ");
 int k1 = Convert.ToInt32(Console.ReadLine());
 string[] arr1 = new string[k1];
-Console.WriteLine("Введите " + k1 + " элемент массива через пробел:");
+Console.WriteLine("Введите " + k1 + " элементов массива через пробел:");
 arr1 = Console.ReadLine().Split(' ');
 
-int k2 = 0; //длинна результирующего массива
-for (int i = 0; i < k1; i++)
+string[] threeElemArr(string[] arr1)
+{
+    int k2 = 0; //длинна результирующего массива
+    for (int i = 0; i < k1; i++)
     {
         if (arr1[i].Length <= 3)
-        k2 = k2 + 1;        
+            k2 = k2 + 1;
     }
-
-string[] arr2 = new string[k2];
-int j = 0;
-for (int i = 0; i < k1; i++)
+    string[] arr2 = new string[k2];
+    int j = 0;
+    for (int i = 0; i < k1; i++)
     {
         if (arr1[i].Length <= 3)
         {
@@ -26,9 +27,8 @@ for (int i = 0; i < k1; i++)
             j++;
         }
     }
-
+    return arr2;
+}
 Console.WriteLine();
-Console.WriteLine("Полученный массив:");
-for (int i = 0; i < k2; i++)
-    Console.Write(arr2[i] + "; ");
-    Console.WriteLine("\b\b.");
+String[] arr2 = threeElemArr(arr1);
+Console.WriteLine($"Полученный массив: [{string.Join(", ", arr2)}]");
